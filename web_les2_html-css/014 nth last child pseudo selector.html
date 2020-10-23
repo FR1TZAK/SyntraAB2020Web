@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>web_les2_css-intro</title>
+    <title>web_les2_html-css</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap" rel="stylesheet">
     <style>
-        /* ASSIGNMENT: USE UNIVERSAL SELECTOR TO COLOR ANY FRUIT GREEN THAT IS SERVED ON A PLATE OR A BENTO */
+        /* ASSIGNMENT: USE NTH LAST CHILD PSEUDO SELECTOR TO COLOR ANY FRUIT GREEN THAT IS SERVED AS THE 3RD LAST FRUIT ON A BENTO
+            TIP: STARTS COUNTING FROM THE BACK */
 
-        span *
+        span.bento span:nth-last-child(3)
         {
             background-color: var(--solution-color) !important;
-        } 
-
+        }
 
         /* STYLESHEET */
 
@@ -105,16 +105,15 @@
 </head>
 <body>
     <div class="table">
-        <span class="plate" id="fancy"><span class="apple small">A</span></span>
-        <span class="plate"><span class="apple">A</span></span>
+        <span class="plate" id="fancy"><span class="apple small">A</span><span class="apple small">A</span><span class="orange small">O</span></span>
+        <span class="bento"><span class="orange small">O</span><span class="apple small">A</span><span class="apple small">A</span></span>
         <span class="plate"></span>
-        <span class="bento" id="fancy"><span class="apple">A</span></span>
+        <span class="bento" id="fancy"><span class="apple small">A</span><span class="apple small">A</span><span class="apple small">A</span></span>
         <span class="plate"><span class="apple small">A</span></span>
-        <span class="bento"><span class="apple small">A</span><span class="apple small">A</span></span>
-        <span class="bento"><span class="orange">O</span></span>
-        <span class="bento"><span class="orange small">O</span></span>
+        <span class="bento"><span class="apple small">A</span><span class="apple small">A</span><span class="apple small">A</span></span>
+        <span class="bento"><span class="orange small">O</span><span class="apple small">A</span><span class="orange small">O</span></span>
+        <span class="bento"><span class="orange">O</span><span class="apple small">A</span></span>
         <span class="apple">A</span>
-
     </div>
 </body>
 </html>

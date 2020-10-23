@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>web_les2_css-intro</title>
+    <title>web_les2_html-css</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap" rel="stylesheet">
     <style>
-        /* ASSIGNMENT: USE ADJACENT SIBLING SELECTOR TO COLOR ANY APPLE THAT IS SERVED NEXT TO A BENTO */
+        /* ASSIGNMENT: USE CHILD SELECTOR TO COLOR ANY FRUIT GREEN IN A BENTO */
 
-        span.bento + span.apple
+        span.bento > span
         {
             background-color: var(--solution-color) !important;
         } 
@@ -109,9 +109,10 @@
         <span class="plate"><span class="apple">A</span></span>
         <span class="plate"></span>
         <span class="bento" id="fancy"><span class="apple">A</span></span>
-        <span class="apple small">A</span>
-        <span class="bento"><span class="apple small">A</span><span class="apple small">A</span></span>
-        <span class="bento"><span class="orange">O</span></span>
+        <span class="apple">A</span>
+        <span class="orange">O</span>
+        <span class="apple">A</span>
+        <span class="orange">O</span>
         <span class="bento"><span class="orange small">O</span></span>
         <span class="apple">A</span>
 

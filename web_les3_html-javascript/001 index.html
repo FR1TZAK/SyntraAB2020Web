@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>web_les3_html-javascript</title>
+<style>
+    .feedbackDefault { color: black; }
+    .feedbackValid { color: green; }
+    .feedbackInvalid { color: red; }
+</style>
+</head>
+<body>
+    <h3>1. Variables</h3>
+        
+        <input value="Run test" type="button" onclick="testVariables();" />
+        <input value="Reset" type="button" onclick="resetLayout(null, 'feedbackVariables');" /><br />
+        <p id="feedbackVariables"></p>
+        <hr />
+
+    <h3>2. Arrays</h3>
+        
+        <label>How many entries?</label>
+        <input id="inputArrays" type="text" /><br />
+        <input value="Run test" type="button" onclick="testArrays();" />
+        <input value="Reset" type="button" onclick="resetLayout('inputArrays', 'feedbackArrays');" /><br />
+        <p id="feedbackArrays"></p>
+        <hr />
+
+    <script src="001 script.js"></script>
+
+</body>
+</html>
+
+

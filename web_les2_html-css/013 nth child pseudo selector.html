@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>web_les2_css-intro</title>
+    <title>web_les2_html-css</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap" rel="stylesheet">
     <style>
-        /* ASSIGNMENT: USE NTH OF TYPE PSEUDO SELECTOR TO COLOR ANY FRUIT GREEN THAT IS SERVED AS THE 2ND AND 3RD OF TYPE ON A BENTO */
+        /* ASSIGNMENT: USE NTH CHILD PSEUDO SELECTOR TO COLOR ANY FRUIT GREEN THAT IS SERVED AS THE NTH FRUIT ON A BENTO */
 
-        span.bento span:nth-of-type(2),
-        span.bento span:nth-of-type(3)
+        span.bento span:nth-child(3)
         {
             background-color: var(--solution-color) !important;
         }
