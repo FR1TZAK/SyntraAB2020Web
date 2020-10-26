@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <title>web_les3_html-javascript</title>
+    <style>
+        #inputGridSize
+        {
+            width: 30px;
+        }
+    </style>
 </head>
 <body>
     <h3>Conway's Game of Life</h3>
         
-        <input value="Start Conway's Game of Life" type="button" onclick="runGame();" />
-        <label>Grid size:</label> <input id="inputGridSize" type="text" placeholder="100" />
+        <label>Grid size in block dimensions</label>
+        <input id="inputGridSize" type="text" value="50" /> <br /><br />
+        <input value="Start Game" type="button" onclick="runGame();" />
 
         <p id="feedback"></p>
         <hr />

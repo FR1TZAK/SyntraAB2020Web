@@ -9,15 +9,13 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 function runGame(){
 
     let output = ""; // reset layout
-
     let inputGridSize = document.getElementById("inputGridSize").value;
+    let grid = document.getElementById("grid");
 
     const game1 = new ConwaysGameOfLife();
     game1.setGridDimensions(inputGridSize, inputGridSize);
-    
     output = game1.drawGrid();
-
-    document.getElementById("grid").innerHTML = output;
+    grid.innerHTML = output;
 }
 
 /* CLASSES */
@@ -30,36 +28,37 @@ class ConwaysGameOfLife
         this._gridHeight = 0;
     }
 
-    drawGrid()
-    {
-        let output = "";
-        for (let i = 0; i < this._gridWidth; i++)
-        {
-            for (let j = 0; j < this.gridHeight; j++)
-            {
-                if (j === this.gridHeight-1)
-                {
-                    output += `<span style="display: block; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
-                }
-                else
-                {
-                    output += `<span style="display: block; float:left; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
-                }
-            }
-            
-        }
-        return output;
-    }
-
-    startGame()
-    {
-
-    }
-
     setGridDimensions(width, height)
     {
         this._gridWidth = width; // SETTER
         this._gridHeight = height; // SETTER
+    }
+
+    drawGrid()
+    {
+        let output = "";
+
+        // 1. make rows
+        for (let r = 1; r <= this._gridHeight; r++)
+        {
+            // 2. make columns
+            for (let c = 1; c <= this._gridWidth; c++)
+            {
+                // 3. draw column
+                if (c <= this._gridWidth)
+                {
+                    output += `<span style="float:left; display: block; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
+                }
+            }
+            // 4. start a new row if limit of columns per row has been reached
+            output += `<span style="display: block; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
+        }
+        return output;
+    }
+    
+    startGame()
+    {
+
     }
 
     // GETTERS
