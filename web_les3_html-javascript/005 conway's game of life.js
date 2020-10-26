@@ -6,7 +6,7 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 /* CONSOLE */
 
-function runGame(){
+function initGrid(){
 
     let output = ""; // reset layout
     let inputGridSize = document.getElementById("inputGridSize").value;
@@ -16,6 +16,34 @@ function runGame(){
     game1.setGridDimensions(inputGridSize, inputGridSize);
     output = game1.drawGrid();
     grid.innerHTML = output;
+}
+
+function toggleBlockState(e)
+{
+    // 1. identify the id of the clicked element
+    e = e || window.event;
+    e = e.target || e.srcElement;
+    // alert(`CLICKED ON ${e.id}`);
+
+    let targetBlock = document.getElementById(`${e.id}`);
+    
+    if(targetBlock.classList.contains("blockInactive") == true)
+    {
+        // switch from inactive to active
+        targetBlock.classList.remove("blockInactive");
+        targetBlock.classList.add("blockActive");
+    }
+    else
+    {
+        // switch from active to inactive
+        targetBlock.classList.remove("blockActive");
+        targetBlock.classList.add("blockInactive");
+    }
+}
+
+function initGame()
+{
+    
 }
 
 /* CLASSES */
@@ -36,26 +64,34 @@ class ConwaysGameOfLife
 
     drawGrid()
     {
+        let blockId = 1;
         let output = "";
 
         // 1. make rows
         for (let r = 1; r <= this._gridHeight; r++)
         {
-            // 2. make columns
+            // 2. draw a new row
+            output += `<span id="block${blockId}" class="blockBase blockClear blockInactive" onclick="toggleBlockState();"></span>`;
+            blockId++;
+            
+            // 3. make columns
             for (let c = 1; c <= this._gridWidth; c++)
             {
-                // 3. draw column
-                if (c <= this._gridWidth)
+
+                if (c < this._gridWidth)
                 {
-                    output += `<span style="float:left; display: block; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
+                    // 4. draw a new column
+                    output += `<span id="block${blockId}" class="blockBase blockFloat blockInactive" onclick="toggleBlockState();"></span>`;
+                    blockId++;
                 }
+
+
             }
-            // 4. start a new row if limit of columns per row has been reached
-            output += `<span style="display: block; margin-right: -1px; margin-bottom: -1px; border: 1px solid #929292; color: white; width: 5px; height: 5px"></span>`;
+            
         }
         return output;
     }
-    
+
     startGame()
     {
 
@@ -90,13 +126,6 @@ class ConwaysGameOfLife
         set color(color) { this._color = color; }
 
     }
-
-    class Grid
-    {
-
-    }
-
-
 
 class StillLife
 {

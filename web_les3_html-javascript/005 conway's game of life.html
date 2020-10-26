@@ -7,6 +7,52 @@
         {
             width: 30px;
         }
+
+        span.blockBase
+        {
+            display: block;
+            margin-right: -1px;
+            margin-bottom: -1px;
+            border: 1px solid #BABCBE;
+            width: 5px;
+            height: 5px;
+        }
+
+        span.blockFloat
+        {
+            float: left;
+        }
+
+        span.blockClear
+        {
+            float: left;
+            clear: both;
+        }
+
+        span.blockBase:hover
+        {
+            background-color: black;
+            cursor: pointer;
+        }
+
+        span.blockBase:focus,
+        span.blockBase:active
+        {
+            background-color: black;
+        }
+
+
+        span.blockActive
+        {
+            background-color: black;
+        }
+
+        span.blockInactive
+        {
+            background-color: white;
+        }
+
+
     </style>
 </head>
 <body>
@@ -14,7 +60,8 @@
         
         <label>Grid size in block dimensions</label>
         <input id="inputGridSize" type="text" value="50" /> <br /><br />
-        <input value="Start Game" type="button" onclick="runGame();" />
+        <input value="Draw Grid" type="button" onclick="initGrid();" />
+        <input value="Start Game" type="button" onclick="initGame();" />
 
         <p id="feedback"></p>
         <hr />
