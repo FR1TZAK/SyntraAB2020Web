@@ -1,6 +1,6 @@
 /* 
 fizzBuzz
------------
+------------
 - user input: start number / end number
 - print numbers b/w start / end
 - numbers divisible by 3 replace by "Fizz"
